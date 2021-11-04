@@ -1,24 +1,25 @@
-# README
+# Subscription Service
+> Subscription Service is a take-home challenge for Mod 4 of Turing School of Software & Design
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Contents
+- [Subscription Service](#subscription-service)
+  - [Contents](#contents)
+    - [Overview](#overview)
+    - [Tools Utilized](#tools-utilized)
+    - [Endpoints](#endpoints)
+    - [Database Schema](#database-schema)
 
-Things you may want to cover:
+### Overview
 
-* Ruby version
+### Tools Utilized
+Add tools table
 
-* System dependencies
+### Endpoints
+| Feature | Endpoint |
+|-----|-----|
+| Subscribe to a new tea subscription | `POST /api/v1/customers/:id/subscriptions` |
+| Cancel a customer's tea subscription | `UPDATE /api/v1/customers/:id/subscriptions` |
+| See all of a customer’s subscriptions (active and cancelled) | `GET /api/v1/customers/:id/subscriptions` |
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Database Schema
+Add Screenshot
