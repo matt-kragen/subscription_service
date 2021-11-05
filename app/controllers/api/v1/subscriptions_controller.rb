@@ -3,7 +3,7 @@ class Api::V1::SubscriptionsController < ApplicationController
     customer = Customer.find(params[:customer_id])
     render json: SubscriptionSerializer.new(customer.subscriptions)
   end
-  
+
   def create
     customer = Customer.find(params[:customer_id])
     tea = Tea.find(params[:tea_id])
@@ -18,8 +18,8 @@ class Api::V1::SubscriptionsController < ApplicationController
   def update
     subscription = Subscription.find(params[:id])
     if params[:status]
-        subscription.update(subscription_params)
-        render json: SubscriptionSerializer.new(subscription)
+      subscription.update(subscription_params)
+      render json: SubscriptionSerializer.new(subscription)
     else
       render json: ErrorSerializer.new.update_errors[:missing_params], status: :unprocessable_entity
     end
@@ -30,5 +30,4 @@ class Api::V1::SubscriptionsController < ApplicationController
   def subscription_params
     params.permit(:tea_id, :customer_id, :title, :price, :status, :frequency)
   end
-
 end

@@ -7,7 +7,7 @@ RSpec.describe Subscription, type: :model do
     it { should validate_presence_of(:status) }
     it { should validate_presence_of(:frequency) }
   end
-  
+
   describe 'relationships' do
     it { should belong_to :customer }
     it { should belong_to :tea }
