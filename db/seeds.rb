@@ -43,6 +43,7 @@ s1 = Subscription.create(
   customer_id: c1.id,
   tea_id: t1.id,
   title: 'Subscription 1',
+  price: 1.00,
   status: 'Active',
   frequency: 2
 )
@@ -50,6 +51,7 @@ s2 = Subscription.create(
   customer_id: c1.id,
   tea_id: t1.id,
   title: 'Subscription 2',
+  price: 2.00,
   status: 'Cancelled',
   frequency: 3
 )
@@ -57,6 +59,7 @@ s3 = Subscription.create(
   customer_id: c2.id,
   tea_id: t2.id,
   title: 'Subscription 3',
+  price: 3.00,
   status: 'Active',
   frequency: 1
 )
@@ -64,6 +67,7 @@ s4 = Subscription.create(
   customer_id: c2.id,
   tea_id: t2.id,
   title: 'Subscription 4',
+  price: 4.00,
   status: 'Cancelled',
   frequency: 2
 )
@@ -71,6 +75,7 @@ s5 = Subscription.create(
   customer_id: c3.id,
   tea_id: t3.id,
   title: 'Subscription 5',
+  price: 5.00,
   status: 'Active',
   frequency: 1
 )
@@ -78,6 +83,7 @@ s6 = Subscription.create(
   customer_id: c3.id,
   tea_id: t3.id,
   title: 'Subscription 6',
+  price: 6.00,
   status: 'Cancelled',
   frequency: 2
 )
