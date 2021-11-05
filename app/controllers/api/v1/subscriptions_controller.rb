@@ -4,7 +4,7 @@ class Api::V1::SubscriptionsController < ApplicationController
     tea = Tea.find(params[:tea_id])
     subscription = customer.subscriptions.new(subscription_params)
     if subscription.save
-      render json: subscription
+      render json: SubscriptionSerializer.new(subscription)
     else
       render json: subscription.errors, status: :unprocessable_entity
     end

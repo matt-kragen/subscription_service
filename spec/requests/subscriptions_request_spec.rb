@@ -18,14 +18,16 @@ RSpec.describe "Subscription requests" do
           frequency: 1
         }
         post "/api/v1/customers/#{@customer1.id}/subscriptions", params: subscription_params
-        
         expect(response).to be_successful
-        expect(response).to have_key(:data)
-        expect(response[:data]).to have_key(:attributes)
-        expect(response[:data][:attributes]).to have_key(:title)
-        expect(response[:data][:attributes]).to have_key(:price)
-        expect(response[:data][:attributes]).to have_key(:status)
-        expect(response[:data][:attributes]).to have_key(:frequency)
+        
+        subscription = JSON.parse(response.body, symbolize_names: true)
+        expect(subscription).to have_key(:data)
+        expect(subscription[:data]).to have_key(:type)
+        expect(subscription[:data]).to have_key(:attributes)
+        expect(subscription[:data][:attributes]).to have_key(:title)
+        expect(subscription[:data][:attributes]).to have_key(:price)
+        expect(subscription[:data][:attributes]).to have_key(:status)
+        expect(subscription[:data][:attributes]).to have_key(:frequency)
       end
     end
   end
