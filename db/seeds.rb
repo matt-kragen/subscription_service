@@ -1,7 +1,83 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Customers
+c1 = Customer.create(
+  first_name: 'John',
+  last_name: 'Doe',
+  email: 'example@example.com',
+  address: '1234 Fake Street'
+)
+c2 = Customer.create(
+  first_name: 'Jane',
+  last_name: 'Doe',
+  email: 'happy@happy.com',
+  address: '4321 Num Street'
+)
+c3 = Customer.create(
+  first_name: 'John',
+  last_name: 'Smith',
+  email: 'sad@sad.com',
+  address: '5678 Chimp Ave'
+)
+
+# Teas
+t1 = Tea.create(
+  title: 'Green Tea',
+  description: 'This is a green tea',
+  temperature: 200,
+  brew_time: 10
+)
+t2 = Tea.create(
+  title: 'Black Tea',
+  description: 'This is a black tea',
+  temperature: 201,
+  brew_time: 11
+)
+t3 = Tea.create(
+  title: 'White Tea',
+  description: 'This is a white tea',
+  temperature: 202,
+  brew_time: 12
+)
+
+# Subscriptions
+s1 = Subscription.create(
+  customer_id: c1.id,
+  tea_id: t1.id,
+  title: 'Subscription 1',
+  status: 'Active',
+  frequency: 2
+)
+s2 = Subscription.create(
+  customer_id: c1.id,
+  tea_id: t1.id,
+  title: 'Subscription 2',
+  status: 'Cancelled',
+  frequency: 3
+)
+s3 = Subscription.create(
+  customer_id: c2.id,
+  tea_id: t2.id,
+  title: 'Subscription 3',
+  status: 'Active',
+  frequency: 1
+)
+s4 = Subscription.create(
+  customer_id: c2.id,
+  tea_id: t2.id,
+  title: 'Subscription 4',
+  status: 'Cancelled',
+  frequency: 2
+)
+s5 = Subscription.create(
+  customer_id: c3.id,
+  tea_id: t3.id,
+  title: 'Subscription 5',
+  status: 'Active',
+  frequency: 1
+)
+s6 = Subscription.create(
+  customer_id: c3.id,
+  tea_id: t3.id,
+  title: 'Subscription 6',
+  status: 'Cancelled',
+  frequency: 2
+)
