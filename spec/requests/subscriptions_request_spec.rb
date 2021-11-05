@@ -80,5 +80,24 @@ RSpec.describe "Subscription requests" do
         expect(errors[:frequency]).to eq(["can't be blank"])
       end
     end
+
+    describe 'PATCH /subscriptions' do
+      it 'throws error if params are missing' do
+        subscription_params = {
+          customer_id: @customer1.id,
+          tea_id: @tea1.id,
+          title: "Tea Subscription",
+          price: 5.00,
+          status: "Active",
+          frequency: 1
+        }
+        subscription = Subscription.create(subscription_params)
+
+        patch "/api/v1/customers/#{@customer1.id}/subscriptions/#{subscription.id}"
+        expect(response).to_not be_successful
+        expect(response).to have_http_status(422)
+        expect(response.body).to eq("Params are missing!")
+      end
+    end
   end
 end
